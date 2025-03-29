@@ -9,6 +9,7 @@ public class Participante {
     String celular;
     String numeroDeEmergencia;
     String grupoSanguineo;
+    Categoria categoria;
 
     public Participante( int numeroDeParticipante, int edad, long dni, String nombre, String apellido, String celular, String numeroDeEmergencia, String grupoSanguineo){
       this.numeroDeParticipante = numeroDeParticipante;
@@ -19,6 +20,14 @@ public class Participante {
       this.numeroDeEmergencia = numeroDeEmergencia;
       this.grupoSanguineo = grupoSanguineo;
       this.edad = edad;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public int getNumeroDeParticipante() {

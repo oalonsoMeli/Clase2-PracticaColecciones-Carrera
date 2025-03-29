@@ -6,32 +6,45 @@ import objetosPractica.Participante;
 
 public class Main {
     public static void main(String[]args){
-    Categoria circuitoChico = new Categoria (1, "Circuito chico", "2km por selva y arroyos");
-    Categoria circuitoMedio = new Categoria(2, "Circuito medio", "5km por selva, arroyos y barro");
-    Categoria circuitoAvanzado = new Categoria(3, "Circuito avanzado", "10km por selva, arroyo, barro y escalada de piedra");
+
 
     Participante p1 = new Participante(1, 17, 7381273, "Ornella", "Alonso", "28193321", "3894853", "0+");
     Participante p2 = new Participante(2, 25, 7381273, "Maria", "Gutierrez", "28193321", "3894853", "0+");
     Participante p3 = new Participante(3, 28, 7381273, "Lucia", "Moreno", "28193321", "3894853", "0+");
     Participante p4 = new Participante(4, 16, 7381273, "Eleonora", "Suarez", "28193321", "3894853", "0+");
-
-    Inscripcion i = new Inscripcion(circuitoChico);
-    i.inscribirse(p1);
-    Double montoPersona = i.calcularMonto(p1);
-    System.out.println("El monto a pagar de " + p1.getNombre() + " es de " + montoPersona);
-
-    Inscripcion i2 = new Inscripcion(circuitoMedio);
-    i2.inscribirse(p2);
-    Double montoPersona2 = i2.calcularMonto(p2);
-    System.out.println("El monto a pagar de " + p2.getNombre() + " es de " + montoPersona2);
+    Participante p5 = new Participante(5, 30, 7381273, "Javier", "Ramirez", "28193322", "3894854", "A+");
+    Participante p6 = new Participante(6, 21, 7381273, "Camila", "Fernandez", "28193323", "3894855", "B-");
+    Participante p7 = new Participante(7, 18, 7381273, "Santiago", "Lopez", "28193324", "3894856", "AB+");
+    Participante p8 = new Participante(8, 15, 7381273, "Valentina", "Martinez", "28193325", "3894857", "O-");
+    Participante p9 = new Participante(9, 22, 7381273, "Andres", "Gonzalez", "28193326", "3894858", "B+");
+    Participante p10 = new Participante(10, 19, 7381273, "Florencia", "Diaz", "28193327", "3894859", "A-");
 
 
-        Inscripcion i3 = new Inscripcion(circuitoAvanzado);
-    i3.inscribirse(p3);
-    Double montoPersona3 = i3.calcularMonto(p3);
-    System.out.println("El monto a pagar de " + p3.getNombre() + " es de " + montoPersona3);
+    Inscripcion i = new Inscripcion();
+    i.inscribirDeManeraRandom(p1);
+    i.inscribirDeManeraRandom(p2);
+    i.inscribirDeManeraRandom(p3);
+    i.inscribirDeManeraRandom(p4);
+    i.inscribirDeManeraRandom(p5);
+    i.inscribirDeManeraRandom(p6);
+    i.inscribirDeManeraRandom(p7);
+    i.inscribirDeManeraRandom(p8);
+    i.inscribirDeManeraRandom(p9);
+    i.inscribirDeManeraRandom(p10);
 
-        i3.inscribirse(p4);
+    System.out.println("-----------------------------------------");
+    i.inscribirDeManeraRandom(p10);
+
+    System.out.println("-----------------------------------------");
+    i.eliminarParticipante(p2);
+
+    System.out.println("-----------------------------------------");
+    System.out.println("Los participantes de la competencia son:");
+    i.mostrarInscriptos();
+
+    System.out.println("-----------------------------------------");
+    i.calcularMontoPorCategoria();
+    i.calcularMontoTotalEnCarrera();
 
     }
 }
